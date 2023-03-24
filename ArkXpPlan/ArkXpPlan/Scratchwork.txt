@@ -1,0 +1,31 @@
+Note:
+    +All xp values given in this file are pulled from the 1x values given in the Ark Wiki
+Idea:
+    +The idea behind this project is to create a fun xp calculator for Ark: Survival Evolved
+Goals:
+    +To take into account any level from 1 to 180 using the games xp algorithm
+    +Utilize many methods of gaining XP and allow for combining them to build a plan that you want
+    +Allow server XP rates to be plugged in by user to automatically change XP values at runtime
+XP Methods:
+    +Note run Island
+    +Note run Extinction
+    +Crafting Cooking Pots
+    +Running swamp Cave
+    +Killing Alpha Raptors
+    +Killing Alpha Carno
+    +Killing alpha Rex
+    +Killing Deathworm
+    +Killing Titanosaur
+    +Sleeping in Tek Pod
+    +Killing baby gigas
+
+
+Ark XP calculation: 
+    Possibly create an int array 179 elements long, where element 0 = lvl 1, and element 179 = lvl 180 and the value of each element is its corresponding levels xp requirement
+
+
+
+
+
+Links:
+    https://ark.fandom.com/wiki/Leveling
