@@ -1,7 +1,7 @@
 // ArkXpPlan.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 #include <iostream>
-
+#include <conio.h>
 int CharacterXPLevels[180] = { 0, 5, 20, 40, 120, 190, 270, 360, 450, 550, 660, 780, 910, 1050, 1200, 1360, 1530, 1710, 1900, 2100, 2310, 2530, 2760,
                                   3000, 3250, 3510, 3780, 4060, 4350, 4650, 4960, 5280, 5610, 5950, 6300, 6660, 7030, 7410, 7800, 8200, 8610, 9030, 9460,
                                   9900, 10350, 10810, 11280, 11760, 12250, 12750, 13260, 13780, 14310, 14850, 15400, 15960, 16530, 17110, 17700, 18850,
@@ -234,6 +234,7 @@ int main()
         xpNeeded -= xpGained;
         if (xpGained >= xpNeeded) {
             std::cout << "You have already reached your desired level" << "\n";
+            int wait = _getch();
             return 0;
         }
         std::cout << "You need " << xpNeeded << "xp points to reach your desired level of " << goalLevel << "\n";
