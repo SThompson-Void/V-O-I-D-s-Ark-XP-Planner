@@ -21,6 +21,24 @@ int goalLevel{};
 int xpNeeded{};
 int xpMultiplier{};
 int xpGained{};
+int newLevel{};
+int totalXp{};
+
+int updateCurrentLevel(int totalXp) {
+    int newLevel{};
+    for (int i = currentLevel; i < 180;) {
+        if (CharacterXPLevels[i] >= totalXp) {
+            newLevel = i;
+            break;
+        }
+        else {
+            i++;
+        }
+
+    }
+
+    return newLevel;
+}
 
 int startup(){
     std::cout << "Welcome to V O I D's XP calculator and planner" << "\n" << "Please enter your server's XP multiplier, otherwise set it to 1: ";
@@ -230,8 +248,11 @@ int main()
     while (cycle == 'Y' || cycle == 'y') {
         std::cout << "You need " << xpNeeded << "xp points to reach your desired level of " << goalLevel << "\n\n";
         xpGained = pickTask();
+        totalXp = xpGained + CharacterXPLevels[currentLevel];
         std::cout << "You gained " << xpGained << "xp from that task" << "\n";
         xpNeeded -= xpGained;
+        
+        std::cout << "Your current level is: " << updateCurrentLevel(totalXp) << "\n";
         if (xpGained >= xpNeeded) {
             std::cout << "You have already reached your desired level" << "\n";
             int wait = _getch();
